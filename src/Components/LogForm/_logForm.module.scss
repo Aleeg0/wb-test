@@ -1,0 +1,140 @@
+@import "../../Styles/mixin";
+
+.LogForm{
+  margin: 100px auto;
+  position: relative;
+  padding: 80px 24px 24px 24px;
+  width: 500px;
+  height: 575px;
+  background-color: #F0F4FC;
+
+  svg{
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    width: 52px;
+    height: 52px;
+    transition: transform .3s ease-in-out;
+
+    rect, path{
+      cursor: pointer;
+    }
+
+    rect{
+      transition: fill .3s ease-in-out;
+    }
+
+    &:hover{
+      transform: scale(1.1);
+      rect{
+        fill: rgba(36, 76, 152, 0.22);
+      }
+    }
+  }
+
+  form{
+    display: flex;
+    flex-direction: column;
+
+    h1{
+      font-size: 24px;
+      font-weight: 500;
+      margin-bottom: 18px;
+      color: rgba(50, 50, 50, 1);
+    }
+  }
+
+  label{
+    display: flex;
+    align-items: center;
+    color: rgba(50, 50, 50, 1);
+    font-size: 18px;
+    margin-bottom: 24px;
+
+    input{
+      margin-right: 14px;
+      width: 18px;
+      height: 18px;
+      color: rgba(50, 50, 50, 1);
+      background-color: rgba(240, 244, 252, 1);
+      cursor: pointer;
+    }
+  }
+
+  a{
+    position: relative;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 500;
+    color: rgba(36, 76, 152, 1);
+    margin-bottom: 36px;
+    width: 136px;
+    cursor: pointer;
+
+    @include underlineAnimation(rgba(36, 76, 152, 1));
+  }
+
+}
+
+.inputsContainer{
+  display: flex;
+  flex-direction: column;
+  row-gap: 4px;
+  margin-bottom: 24px;
+
+  input{
+    width: 452px;
+    height: 73px;
+    background-color: #D7E2F6;
+    border-radius: 10px;
+    padding: 24px;
+    cursor: text;
+
+    &::placeholder{
+      font-size: 18px;
+      font-weight: 500;
+      color: rgba(31, 66, 132, 1);
+    }
+  }
+}
+
+.controls{
+  display: flex;
+  flex-direction: column;
+  row-gap: 4px;
+
+  button{
+    padding: 18px 12px;
+    width: 452px;
+    height: 65px;
+    background-color: #244C98;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 1);
+    cursor: pointer;
+
+    &.signUp{
+      background: transparent;
+      border: 1px solid rgba(36, 76, 152, 1);
+      color: rgba(36, 76, 152, 1);
+
+      &:hover{
+        background-color:  rgba(36, 76, 152, 0.22);
+      }
+
+      &:active{
+        background-color:  rgba(36, 76, 152, 0.28);
+      }
+    }
+
+    &:hover{
+      background-color: lighten(#244C98,5%);
+    }
+
+    &:active{
+      background-color: darken(#244C98,5%);
+    }
+  }
+}
