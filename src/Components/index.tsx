@@ -1,1 +1,2 @@
-export {Poster} from "./Poster"
+export {Poster} from "./Poster";
+export {LogForm} from "./LogForm";
