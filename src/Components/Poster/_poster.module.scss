@@ -1,0 +1,75 @@
+.poster{
+  margin: 36px 40px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(235, 240, 250, 1);
+
+  img{
+    width: 910px;
+    height: 456px;
+    border-radius: 0 10px 10px 0;
+  }
+}
+
+.content{
+  display: flex;
+  flex-direction: column;
+  margin-left: 72px;
+
+  h1{
+    font-size: 30px;
+    font-weight: 500;
+    color: rgba(31, 66, 132, 1);
+    margin-bottom: 18px;
+  }
+
+  p{
+    margin-bottom: 36px;
+    width: 511px;
+    font-size: 17px;
+    font-weight: 400;
+    color: rgba(114, 114, 114, 1);
+  }
+
+  button{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 341px;
+    height: 68px;
+    padding: 12px 12px 12px 24px;
+    border-radius: 60px;
+    outline: none;
+    background-color: #244C98;
+    font-size: 18px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 1);
+    cursor: pointer;
+    transition: transform .3s ease-in-out;
+
+    svg{
+      transition: background-color .3s ease-in-out;
+      path{
+        transition: transform .3s ease-in-out;
+      }
+
+    }
+
+    &:hover{
+      background-color: lighten(#244C98,5%);
+      transform: scale(1.01);
+
+      svg{
+        path{
+          transform: translate(3px,-3px);
+        }
+      }
+    }
+
+    &:active{
+      background-color: darken(#244C98,5%);
+    }
+  }
+}
