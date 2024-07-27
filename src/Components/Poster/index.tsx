@@ -1,8 +1,14 @@
 import posterImg from "../../assets/posterImg.png";
 import {ArrowSvg} from "../SVGC";
 import styles from "./_poster.module.scss"
+import {FC} from "react";
 
-export const Poster = () => {
+interface PosterProps {
+  onButtonClick: () => void;
+}
+
+export const Poster: FC<PosterProps> = ({onButtonClick}) => {
+
   return (
     <div className={styles.poster}>
       <div className={styles.content}>
@@ -11,6 +17,7 @@ export const Poster = () => {
           Используя знания и накопленный опыт мы можем предложить </p>
         <button
           type="button"
+          onClick={onButtonClick}
         >
           Попробовать бесплатно
           <ArrowSvg/>
