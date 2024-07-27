@@ -1,36 +1,73 @@
 @import "../../Styles/mixin";
 
-.LogForm{
-  margin: 100px auto;
+.wrapper{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  opacity: 0;
+  transition: all .3s ease-in-out;
+  z-index: -1;
+
+  &.show{
+    z-index: 1;
+    opacity: 1;
+  }
+}
+
+.logForm{
   position: relative;
+  top: -100vh;
+  margin: 100px auto;
   padding: 80px 24px 24px 24px;
   width: 500px;
   height: 575px;
   background-color: #F0F4FC;
+  transition: all .3s ease-in-out;
+  opacity: 0;
 
-  svg{
-    position: absolute;
-    top: 24px;
-    right: 24px;
-    width: 52px;
-    height: 52px;
-    transition: transform .3s ease-in-out;
+  &.show{
+    opacity: 1;
+    transform: translateY(100vh);
+  }
 
-    rect, path{
-      cursor: pointer;
+  button{
+
+    &.closeBtn{
+      position: absolute;
+      padding: 0;
+      top: 24px;
+      right: 24px;
+      width: 52px;
+      height: 52px;
+      border-radius: 10px;
     }
 
-    rect{
-      transition: fill .3s ease-in-out;
-    }
+    svg{
+      width: 52px;
+      height: 52px;
+      transition: transform .3s ease-in-out;
 
-    &:hover{
-      transform: scale(1.1);
+      rect, path{
+        cursor: pointer;
+      }
+
       rect{
-        fill: rgba(36, 76, 152, 0.22);
+        transition: fill .3s ease-in-out;
+      }
+
+      &:hover{
+        transform: scale(1.1);
+        rect{
+          fill: rgba(36, 76, 152, 0.22);
+        }
       }
     }
   }
+
+
 
   form{
     display: flex;
@@ -83,7 +120,7 @@
   margin-bottom: 24px;
 
   input{
-    width: 452px;
+    width: 100%;
     height: 73px;
     background-color: #D7E2F6;
     border-radius: 10px;
@@ -105,7 +142,7 @@
 
   button{
     padding: 18px 12px;
-    width: 452px;
+    width: 100%;
     height: 65px;
     background-color: #244C98;
     border-radius: 4px;
@@ -137,4 +174,18 @@
       background-color: darken(#244C98,5%);
     }
   }
+}
+
+@media (max-width: 375px) {
+  .logForm{
+    top: unset;
+    bottom: -100vh;
+    width: 375px;
+
+    &.show{
+      opacity: 1;
+      transform: translateY(-100vh);
+    }
+  }
+  
 }
